@@ -119,10 +119,6 @@ fn example_create_policy_programmatically() -> anyhow::Result<()> {
                 drop: Some(vec![CapabilityAction::All]),
                 add: Some(vec![CapabilityAction::NetBindService]),
             }),
-            security_opt: Some(vec![
-                "no-new-privileges:true".to_string(),
-                "seccomp:default".to_string(),
-            ]),
         }),
     };
 

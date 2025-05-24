@@ -86,7 +86,6 @@ pub struct DockerSecurity {
     pub privileged: Option<bool>,
     pub no_new_privileges: Option<bool>,
     pub capabilities: Option<DockerCapabilities>,
-    pub security_opt: Option<Vec<String>>,
 }
 
 /// Docker runtime configuration

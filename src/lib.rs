@@ -153,12 +153,6 @@ mod tests {
             Some(vec![CapabilityAction::NetBindService])
         );
 
-        let security_opts = docker_security.security_opt.as_ref().unwrap();
-        assert_eq!(security_opts.len(), 3);
-        assert!(security_opts.contains(&"no-new-privileges:true".to_string()));
-        assert!(security_opts.contains(&"seccomp:default".to_string()));
-        assert!(security_opts.contains(&"apparmor:docker-default".to_string()));
-
         assert!(
             runtime.hyperlight.is_none(),
             "Hyperlight should be None since it's just a comment"
