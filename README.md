@@ -1,6 +1,6 @@
-# A Parser for MCP Capability Policies
+# A Rust Crate for MCP Capability Policies
 
-A Rust library for parsing and manipulating MCP (Model Context Protocol) server capability policy files.
+A Rust crate for parsing and manipulating MCP (Model Context Protocol) server capability policy files.
 
 ## Basic Usage
 
