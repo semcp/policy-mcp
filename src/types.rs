@@ -3,7 +3,7 @@
 use crate::PolicyResult;
 use anyhow::bail;
 use serde::{Deserialize, Serialize};
-use std::collections::HashMap;
+use std::{collections::HashMap, fmt::Display};
 
 /// read: read access
 /// write: write access
@@ -69,6 +69,17 @@ pub enum CapabilityAction {
     SysAdmin,
     #[serde(rename = "SYS_TIME")]
     SysTime,
+}
+
+impl Display for CapabilityAction {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            CapabilityAction::All => write!(f, "ALL"),
+            CapabilityAction::NetBindService => write!(f, "NET_BIND_SERVICE"),
+            CapabilityAction::SysAdmin => write!(f, "SYS_ADMIN"),
+            CapabilityAction::SysTime => write!(f, "SYS_TIME"),
+        }
+    }
 }
 
 /// Docker security capabilities configuration
